@@ -1,6 +1,8 @@
 # Week 3 - Album Reviews 
 This is my API and web scraping project that uses Spotify API to retrieve all album names given an artist entered by the user, then finds each album's rating and details on Pitchfork, an online music publication.
 
+- Examples: Travis Scott, The 1975 & Taylor Swift
+
 ## Chosen API and Website
 The chosen API is Spotify and chosen website is Pitchfork. I am very interested in the music industry so I use these two platforms regularly.
 - Collected data from Spotify include Artist Names and Album Names. 
