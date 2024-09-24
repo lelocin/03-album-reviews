@@ -6,6 +6,8 @@ from bs4 import BeautifulSoup
 import pandas as pd
 from ratelimit import limits, sleep_and_retry
 import re
+import os
+from dotenv import load_dotenv
 
 @sleep_and_retry
 @limits(calls=30, period=60)
@@ -13,13 +15,15 @@ import re
 def check_limit():
     return
 
-SP_ID = '961e75fad4924ed086b1880d8f10a91a'
-SP_KEY = '5bf751cd234e4a9b932185784e538f4a'
+#loading environment variable & retrieve API ID and KEYs
+load_dotenv()
+ID = os.getenv('SP_API_ID')
+KEY = os.getenv('SP_API_KEY')
 
 # use Spotify API to retrieve albums given an artist
 def get_albums(artist_name):
     sp = spotipy.Spotify(auth_manager=SpotifyClientCredentials(
-        client_id=SP_ID, client_secret=SP_KEY))
+        client_id=ID, client_secret=KEY))
 
     # search for artist given user input
     results = sp.search(q=artist_name, type='artist', limit=1)
