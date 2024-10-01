@@ -1,1 +1,5 @@
-pip install spotipy requests beautifulsoup4 pandas ratelimit
+spotipy
+requests
+beautifulsoup4
+pandas
+ratelimit
